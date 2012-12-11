@@ -1,4 +1,3 @@
-lessMVC
-=======
-
-frame work less Javascript MVC pattern
+MIT License
+-----------
+Copyright (c) John Chacko
