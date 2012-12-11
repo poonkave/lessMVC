@@ -1,8 +1,7 @@
-lessMVC
-=======
+lessMVC -frame work less Javascript MVC pattern
+=================================================
 
-frame work less Javascript MVC pattern
-
+Live demo at http://johnchacko.net/lessmvc/
 
 Seeing a lot of MVC(?) frameworks for large JavaScript applications.
 Not still convinced to use one of them.
@@ -18,10 +17,12 @@ Know similar patterns are discussed.
 http://en.wikipedia.org/wiki/Model-view-adapter
 
 Models.
+-------
 Collection of methods which will do Ajax calls to server and fire callbacks along with response on return.
 Same Models can be used for different versions of the application, to say Mobile & Desktop.
 
 Views.
+-------
 Collection of independent Themable User Interface widgets.
 HTML can be generated using client side templates like, ejs,mustache etc….
 Muti lingual support can be easily integrated.
@@ -30,6 +31,7 @@ Events can be specific to application, not just standard JavaScript events.
 Views can be collection of flat javascript functions or jQuery plugins.
 
 Controller/Adapter/Mediator.
+----------------------------
 Models & Views are completely independent and wont communicate each other.
 Controller acts as a mediator between them.
 Controller calls a Model to get/set data along with a callback.
@@ -45,6 +47,7 @@ Events triggered in Views will be specific to the application UI.
 Like clicking and ‘X’ icon to delete a row.
 So event can be something like ‘DeleteRow’ and listener will be ‘onDeleteRow’.
 View can behave one of the below ways.
+
 1. View will remove the row from UI and fire ‘onDeleteRow’ and pass some data back with which Controller can identify which row is removed.
 Controller in turn call another Model which can remove that information from db table by doing asynchronous request.
 2. View won’t remove the row from UI. It just fire ‘onDeleteRow’ and pass some data back to Controller.
@@ -52,5 +55,20 @@ Controller Makes a call to Model and on successfull return call another View to 
 Again all these depends on the application.
 
 Rules.
+-------
 1.Controllers won’t touch HTML DOM, which is only done by Views.
 2. Models & Views wont communicate each other.
+
+![ScreenShot](http://johnchacko.net/lessmvc/mvc.jpg) 
+
+I modified a jquery sample from www.todomvc.com by Addy Osmani to demonstrate pattern discussed above.
+
+Live demo at http://johnchacko.net/lessmvc/
+
+I kept two seperate instance of todo in UI, just to show the independence across models/views & App.
+
+
+Simple documentation
+-------------------
+
+![ScreenShot](http://johnchacko.net/lessmvc/mvc_doc.jpg) 
